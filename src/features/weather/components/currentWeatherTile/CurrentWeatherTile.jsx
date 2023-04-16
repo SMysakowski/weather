@@ -7,7 +7,8 @@ export default function CurrentWeatherTile({ day }) {
     <WeatherPaper>
       <Typography>Monday</Typography>
       <Typography>
-        {day.temp.day}°C <Typography>({day.temp.day}°C)</Typography>
+        {day.temp.day}°C{" "}
+        <Typography variant="caption">({day.temp.day}°C)</Typography>
       </Typography>
     </WeatherPaper>
   );
