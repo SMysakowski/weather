@@ -1,6 +1,7 @@
 import Typography from "@mui/material/Typography";
 import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
+import { FormattedMessage } from "react-intl";
 
 import LoginButton from "../features/auth/components/LoginButton";
 
@@ -17,7 +18,12 @@ const Landing = () => {
 
   return (
     <div>
-      <Typography variant="h1">Hello Weather App</Typography>
+      <Typography variant="h1">
+        <FormattedMessage
+          id="landing.title"
+          defaultMessage="Hello Weather App"
+        />
+      </Typography>
       <LoginButton />
     </div>
   );

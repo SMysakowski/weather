@@ -8,6 +8,7 @@ import {
 
 import ThemeProvider from "./shared/contexts/themeProvider";
 import ApiProvider from "./shared/contexts/apiProvider";
+import IntlProvider from "./shared/contexts/intlProvider";
 import LandingPage from "./pages/Landing";
 import Dashboard from "./pages/Dashboard";
 
@@ -49,9 +50,11 @@ function App() {
       }}
     >
       <ApiProvider>
-        <ThemeProvider>
-          <RouterProvider router={router} />
-        </ThemeProvider>
+        <IntlProvider>
+          <ThemeProvider>
+            <RouterProvider router={router} />
+          </ThemeProvider>
+        </IntlProvider>
       </ApiProvider>
     </Auth0Provider>
   );
