@@ -3,7 +3,7 @@ import { useNavigate, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import { FormattedMessage } from "react-intl";
 
-import LoginButton from "../features/auth/components/LoginButton";
+import Layout from "../features/landing/components/Layout";
 
 const Landing = () => {
   const { isAuthenticated } = useAuth0();
@@ -17,15 +17,18 @@ const Landing = () => {
   }
 
   return (
-    <div>
-      <Typography variant="h1">
-        <FormattedMessage
-          id="landing.title"
-          defaultMessage="Hello Weather App"
-        />
-      </Typography>
-      <LoginButton />
-    </div>
+    <Layout>
+      <div>
+        <Typography variant="h2" component="h1">
+          <FormattedMessage
+            id="landing.title"
+            defaultMessage={
+              "Welcome to our perfect page. We are the best weather app!!!"
+            }
+          />
+        </Typography>
+      </div>
+    </Layout>
   );
 };
 

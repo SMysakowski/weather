@@ -1,8 +1,7 @@
 import axios from "axios";
 
 const instance = axios.create({
-  // TODO - Change this to your API URL
-  baseURL: "https://jsonplaceholder.typicode.com",
+  baseURL: import.meta.env.VITE_API_URL,
 });
 
 export default instance;

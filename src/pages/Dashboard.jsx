@@ -1,17 +1,18 @@
-import Typography from "@mui/material/Typography";
+import CurrentWeatherSection from "../features/weather/components/currentWeatherSection/CurrentWeatherSection";
+import Layout from "../features/weather/components/layout/Layout";
 
-import LogoutButton from "../features/auth/components/LogoutButton";
-import ShowUserProfile from "../features/auth/components/ShowUserProfile";
+import useCurrentWeather from "../features/weather/hooks/useCurrentWeather";
 
 const Dashboard = () => {
-  // const { user, isAuthenticated } = useAuth0();
+  const { data, isLoading } = useCurrentWeather({
+    lat: 52.2297,
+    lon: 21.022,
+  });
 
   return (
-    <div>
-      <Typography variant="h1">Dashboard</Typography>
-      <ShowUserProfile />
-      <LogoutButton />
-    </div>
+    <Layout>
+      <CurrentWeatherSection daily={data?.daily} isLoading={isLoading} />
+    </Layout>
   );
 };
 

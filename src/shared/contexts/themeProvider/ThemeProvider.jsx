@@ -1,3 +1,5 @@
+import CssBaseline from "@mui/material/CssBaseline";
+
 import {
   createTheme,
   ThemeProvider,
@@ -8,5 +10,10 @@ let theme = createTheme();
 theme = responsiveFontSizes(theme);
 
 export default function CustomThemeProvider({ children }) {
-  return <ThemeProvider theme={theme}>{children}</ThemeProvider>;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline />
+      {children}
+    </ThemeProvider>
+  );
 }
