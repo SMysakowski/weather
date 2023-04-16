@@ -17,7 +17,7 @@ const Landing = () => {
 
   return (
     <div>
-      <Typography variant="h1">Hello Weather App</Typography>
+      <Typography variant="h1">Hello Weather App TEST</Typography>
       <LoginButton />
     </div>
   );
